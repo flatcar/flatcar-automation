@@ -12,7 +12,7 @@ menuentry 'Flatcar installer' --class gnu-linux --class gnu --class os {
         insmod ext2
         insmod part_gpt
         echo 'Loading Flatcar vmlinuz'
-        linux  (\$root)/flatcar_production_pxe.vmlinuz  initrd=flatcar_production_pxe_image.cpio.gz flatcar.first_boot=1 console=tty1 console=ttyS0 ignition.config.url=https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/sanjpill_sandbox/b/ignition-config/o/iscsi-ignition.json
+        linux  (\$root)/flatcar_production_pxe.vmlinuz  initrd=flatcar_production_pxe_image.cpio.gz flatcar.first_boot=1 console=tty1 console=ttyS0 ignition.config.url=http://169.254.169.254/openstack/latest/user_data
         echo 'Loading initial ramdisk'
         initrd (\$root)/flatcar_production_pxe_image.cpio.gz
 }
